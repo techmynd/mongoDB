@@ -1,0 +1,12 @@
+run mongod from C:\MongoDB\Server\4.0\bin in one terminal
+and run mongo.exe from C:\MongoDB\Server\4.0\bin in other terminal
+and use commands
+
+
+> show dbs
+> use <yourdbname>
+> show collections
+> db.<collection name>.insertOne({id: 1, "name":"some name"})
+> db.<collection name>.find()
+> db.<collection name>.find().pretty
+

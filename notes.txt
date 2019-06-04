@@ -1,0 +1,79 @@
+
+> mongo --version
+
+set system variables
+
+go to C:\MongoDB\Server\4.0\bin and run 
+> mongod 
+
+
+
+https://treehouse.github.io/installation-guides/windows/mongo-windows.html
+https://datawookie.netlify.com/blog/2016/01/mongodb-installing-on-windows-7/
+
+root folder > C:\MongoDB\Server\4.0
+create folder in c data/db
+C:\data\db
+
+or change path
+mongod --dbpath "C:\MongoDB\Server\4.0\data\db"
+
+and then run mongod
+otherwise it will shut down with code 100
+
+
+in one terminal
+> mongod 
+and then open mongo.exe (mongo shell) by using administrator priviliges from bin
+
+and try
+> show dbs
+> show collections
+
+You can also git bash here
+C:\MongoDB\Server\4.0\bin
+and 
+> mongo.exe
+This will start mongo in git bash and you can use commands
+
+mongo shell commands
+=====================
+> show dbs
+> show collections
+
+> use shop (switched to db shop) 
+// > use 'dbname' will create a new db and switch to that db
+
+insert products as collection in currently selected db and insert one record
+> db.products.insertOne({"name": "some name"})
+// this will create a new collection and insert this record in it
+
+show currently inserted collection and record in pretty way
+> db.products.find().pretty()
+
+> db.products.findOne();
+
+change port (you will have to do it for both mongod and mongo shell)
+> mongod --port 27018
+> mongo --port 27018
+
+delete database
+===============
+> use <databaseName>
+> db.dropDatabase()
+
+delete collection
+=================
+> use <databaseName>
+> db.myCollection.drop()
+
+current selected database stats
+===============================
+db.stats()
+
+Limits
+======
+A single document in a collection (including all embedded documents it might have) must be <= 16mb. 
+You may only have 100 levels of embedded documents.
+
+

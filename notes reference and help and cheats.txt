@@ -1,0 +1,5 @@
+https://dzone.com/refcardz/mongodb?chapter=1
+https://docs.mongodb.com/manual/faq/
+https://docs.mongodb.com/manual/introduction/
+https://blog.codecentric.de/files/2012/12/MongoDB-CheatSheet-v1_0.pdf
+https://docs.mongodb.com/manual/reference/mongo-shell/
