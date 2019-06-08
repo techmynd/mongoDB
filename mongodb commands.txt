@@ -10,3 +10,50 @@ and use commands
 > db.<collection name>.find()
 > db.<collection name>.find().pretty
 
+> mongoimport moviesimport.json -d moviesData -c movies --jsonArray --drop
+
+db and log paths
+================
+mongod --dbpath "C:\MongoDB\Server\4.0\bin\dbs"
+
+db.users.find().pretty()
+db.users.find().count()
+db.users.find({hobbies: {$elemMatch: {tite: "sports", frequency: {$gte: 3} } }}).pretty()
+
+find method gives u cursor
+ and it shows first 20 results
+
+db.users.find().sort({"rating.average": 1}).count()
+db.users.find().sort({"rating.average": -1}).count()
+
+db.users.find().sort().skip(100).limit(10).count()
+db.users.find().sort().skip(10).limit(10).pretty()
+
+order > sort skip limit / mongodb will use correct order itself
+
+detailed info on results via explain()
+eecution time / scan method etc.
+================================
+db.users.explain().find({"dob.age": {$gt: 60} }).pretty()
+db.users.explain("executionStats").find({"dob.age": {$gt: 60} }).pretty()
+
+indexes
+=======
+db.users.createIndex({ "age": 1 })
+db.users.createIndex({ "age": -1 })
+db.users.createIndex({ "age": 1 }, {background: true}) // background process
+db.users.createIndex({ "description": "text" })
+
+drop index
+==========
+db.users.dropIndex({ "age": 1 })
+
+
+
+
+
+
+
+
+
+
